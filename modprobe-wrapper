@@ -1,0 +1,51 @@
+#!/bin/sh
+
+# Copyright (C) 2016 Stefan Fritsch <sf@sfritsch.de>
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+
+# Wrapper for modprobe to allow module auto-loading only for modules in a
+# whitelist. The whitelist must contain the module aliases that trigger the
+# module load, use modinfo to get the aliases.
+#
+# To use, write the path to the wrapper into /proc/sys/kernel/modprobe late in
+# the boot process.
+
+set -eu
+
+log () {
+	logger -t modprobe-wrapper "$*"
+}
+
+MOD=
+for arg in "$@" ; do
+	case "$arg" in
+	-*)
+		;;
+	*)
+		MOD="$arg"
+		break;
+	esac
+done
+
+if [ -z "$MOD" ] ; then
+	log "could not parse: $*"
+	exit 1
+fi
+
+if grep -q "^$MOD$" /etc/modprobe-wrapper/whitelist ; then
+	log "allowed: $*"
+	set +e
+	exec /sbin/modprobe "$@"
+	exit 1
+fi
+
+if grep -q "^$MOD$" /etc/modprobe-wrapper/blacklist.quiet ; then
+	exit 1
+fi
+
+log "denied: $*"
+exit 1
