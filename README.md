@@ -1,13 +1,13 @@
 # modprobe-wrapper
 
-A modprobe wrapper with a whitelist for module auto-loading.
+A modprobe wrapper with a whitelist for module auto-loading
 
 ## Summary
 
 modprobe-wrapper is a very simple wrapper for modprobe that implements a
 whitelist of modules that are allowed to be auto-loaded by the linux kernel.
-It is mainly useful for servers with a relatively static configuration for
-attack surface reduction.
+It is mainly useful for attack surface reduction on servers with a relatively
+static configuration.
 
 ## Usage
 
