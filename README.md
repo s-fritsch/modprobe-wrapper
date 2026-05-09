@@ -1,7 +1,6 @@
-
 # modprobe-wrapper
 
-A modprobe wrapper with a whitelist for module auto-loading
+A modprobe wrapper with a whitelist for module auto-loading.
 
 ## Summary
 
@@ -28,6 +27,9 @@ When you install or update software of if something does not work as expected
 on your server, always check syslog for modprobe-wrapper's log messages.
 Failed module auto-loading may make software fail in very strange ways with
 misleading error messages.
+
+Compared to `/proc/sys/kernel/modules_disabled`, modprobe-wrapper gives you
+some logging and allows to adapt the whitelist without reboot.
 
 ## Caveats
 
