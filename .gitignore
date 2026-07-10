@@ -1,0 +1,7 @@
+debian/.debhelper/
+debian/debhelper-build-stamp
+debian/files
+debian/modprobe-wrapper.debhelper.log
+debian/modprobe-wrapper.postrm.debhelper
+debian/modprobe-wrapper.substvars
+debian/modprobe-wrapper/

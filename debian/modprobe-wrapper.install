@@ -1,0 +1,4 @@
+modprobe-wrapper usr/libexec
+modprobe-wrapper.service usr/lib/systemd/system
+whitelist etc/modprobe-wrapper
+blacklist.quiet etc/modprobe-wrapper

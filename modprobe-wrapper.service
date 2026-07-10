@@ -1,0 +1,11 @@
+[Unit]
+Description=Activate modprobe-wrapper - whitelist for module autoloading
+After=network.target sshd.service ssh.service nftables.service
+
+[Service]
+Type=oneshot
+ExecStart=sh -c "echo /usr/libexec/modprobe-wrapper > /proc/sys/kernel/modprobe"
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

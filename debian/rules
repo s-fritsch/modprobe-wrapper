@@ -1,0 +1,14 @@
+#!/usr/bin/make -f
+
+# See debhelper(7) (uncomment to enable).
+# Output every command that modifies files on the build system.
+#export DH_VERBOSE = 1
+
+%:
+	dh $@
+
+override_dh_installsystemd:
+	dh_installsystemd --no-stop-on-upgrade
+
+override_dh_installdocs:
+	dh_installdocs README.md

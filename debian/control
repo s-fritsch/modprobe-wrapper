@@ -1,0 +1,19 @@
+Source: modprobe-wrapper
+Section: admin
+Maintainer: Stefan Fritsch <sf@debian.org>
+Build-Depends:
+ debhelper-compat (= 13),
+Standards-Version: 4.7.4
+Homepage: https://github.com/s-fritsch/modprobe-wrapper
+#Vcs-Browser: https://salsa.debian.org/debian/modprobe-wrapper
+#Vcs-Git: https://salsa.debian.org/debian/modprobe-wrapper.git
+
+Package: modprobe-wrapper
+Architecture: all
+Depends:
+ ${misc:Depends},
+Description: modprobe wrapper with a whitelist for module auto-loading
+ modprobe-wrapper is a very simple wrapper for modprobe that implements
+ a whitelist of modules that are allowed to be auto-loaded by the linux
+ kernel. It is mainly useful for attack surface reduction on servers with
+ a relatively static configuration.
