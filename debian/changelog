@@ -1,6 +1,7 @@
 modprobe-wrapper (0.2) UNRELEASED; urgency=medium
 
   * Start later.
+  * Fix prerm
 
  -- Stefan Fritsch <sf@debian.org>  Sun, 12 Jul 2026 11:49:02 +0200
 
