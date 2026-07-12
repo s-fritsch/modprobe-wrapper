@@ -1,6 +1,6 @@
 [Unit]
 Description=Activate modprobe-wrapper - whitelist for module autoloading
-After=network.target sshd.service ssh.service nftables.service
+After=network-online.target remote-fs.target remote-cryptsetup.target nss-user-lookup.target sshd.service ssh.service nftables.service
 
 [Service]
 Type=oneshot
