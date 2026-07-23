@@ -2,7 +2,7 @@ Source: modprobe-wrapper
 Section: admin
 Maintainer: Stefan Fritsch <sf@debian.org>
 Build-Depends:
- debhelper-compat (= 13),
+ debhelper-compat (= 13), debhelper (>= 13.11.8~)
 Standards-Version: 4.7.4
 Homepage: https://github.com/s-fritsch/modprobe-wrapper
 #Vcs-Browser: https://salsa.debian.org/debian/modprobe-wrapper
